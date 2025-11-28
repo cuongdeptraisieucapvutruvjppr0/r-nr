@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chelsea F.C. - Dự Án Cuối Khóa Responsive</title>
+
+    <style>
+        /* CSS MẶC ĐỊNH (Áp dụng cho Desktop - Màn hình lớn nhất > 1200px) */
+        
+        :root {
+            /* Định nghĩa các biến CSS cho màu sắc Chelsea */
+            --chelsea-blue: #034694;
+            --chelsea-white: #ffffff;
+            --chelsea-gold: #f0c300;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: var(--chelsea-blue);
+            color: var(--chelsea-white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid var(--chelsea-gold);
+            margin-bottom: 10px;
+        }
+
+        .container {
+            display: flex; /* Bố cục 3 cột cho Desktop */
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 10px;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--chelsea-white);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Chia đều 3 cột */
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--chelsea-blue);
+            border-bottom: 2px solid var(--chelsea-gold);
+            padding-bottom: 5px;
+        }
+
+        /* Footer cho mọi kích thước */
+        .footer {
+            background-color: var(--chelsea-blue);
+            color: var(--chelsea-white);
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* --- ỨNG DỤNG 4 MEDIA QUERIES CHO BÀI TẬP --- */
+
+        /* BƯỚC 9: Media Query ĐẦU TIÊN (Ví dụ: Large Tablet/Small Laptop - Màn hình < 1200px) */
+        @media screen and (max-width: 1200px) {
+            .container {
+                /* Chuyển bố cục 3 cột sang 2 cột */
+                flex-wrap: wrap; 
+                justify-content: center;
+            }
+
+            .card {
+                flex: 0 1 calc(50% - 20px); /* Mỗi cột chiếm gần 50% chiều rộng */
+            }
+        }
+        
+        /* BƯỚC 11: Media Query THỨ HAI (Ví dụ: Standard Tablet - Màn hình < 992px) */
+        @media screen and (max-width: 992px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .card {
+                /* Giảm kích thước padding và font chữ */
+                padding: 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* BƯỚC 13: Media Query THỨ BA (Ví dụ: Small Tablet/Landscape Phone - Màn hình < 768px) */
+        @media screen and (max-width: 768px) {
+            .container {
+                /* Chuyển bố cục 2 cột sang 1 cột (xếp chồng) */
+                flex-direction: column;
+            }
+
+            .card {
+                flex: 1 1 100%; /* Mỗi cột chiếm 100% chiều rộng */
+                margin-bottom: 15px;
+            }
+
+            .logo {
+                width: 100px;
+            }
+        }
+
+        /* BƯỚC 15: Media Query THỨ TƯ (Ví dụ: Mobile Phone - Màn hình < 576px) */
+        @media screen and (max-width: 576px) {
+            .header {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .card {
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="chelsea_logo_placeholder.png" class="logo" alt="Logo câu lạc bộ Chelsea F.C.">
+        <h1>Chelsea Football Club - The Blues</h1>
+        <p>Thành lập năm 1905 | Sân nhà: Stamford Bridge</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>Lịch Sử Đội Bóng</h2>
+            <p>Chelsea F.C. là một trong những câu lạc bộ thành công nhất nước Anh, với nhiều danh hiệu vô địch quốc gia và quốc tế, bao gồm cả UEFA Champions League và Europa League. CLB luôn nổi tiếng với màu áo xanh truyền thống và sự cạnh tranh quyết liệt.</p>
+            <img src="stamford_bridge_placeholder.jpg" alt="Sân vận động Stamford Bridge">
+        </div>
+
+        <div class="card">
+            <h2>Đội Hình Hiện Tại</h2>
+            <p>Đội hình hiện tại bao gồm nhiều tài năng trẻ và các ngôi sao lớn, cam kết xây dựng một tương lai vững chắc. Triết lý huấn luyện tập trung vào lối chơi tấn công tốc độ và kiểm soát bóng.</p>
+            <p>Các cầu thủ đáng chú ý: Enzo Fernández, Raheem Sterling, Cole Palmer.</p>
+        </div>
+
+        <div class="card">
+            <h2>Thông Tin Cúp Châu Âu</h2>
+            <p>Chelsea là đội bóng London đầu tiên giành được UEFA Champions League vào năm 2012, và sau đó lặp lại thành tích này vào năm 2021. Những chiến thắng này củng cố vị thế của The Blues trên đấu trường châu lục.</p>
+            <img src="ucl_trophy_placeholder.jpg" alt="Cúp vô địch UEFA Champions League">
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Chelsea F.C. Responsive Project | Đã áp dụng 4 Media Queries.</p>
+    </footer>
+    
+    </body>
+</html>
